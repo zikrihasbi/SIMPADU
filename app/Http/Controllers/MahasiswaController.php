@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\Prodi;
 use Illuminate\Http\Request;
+use PHPUnit\Event\Code\Test;
 
 class MahasiswaController extends Controller
 {
@@ -15,7 +17,8 @@ class MahasiswaController extends Controller
         //
         $data = ['nama' => 'hasbi saltobelakang', 'foto' => 'avatar.png'];
         $mahasiswa = Mahasiswa::with('prodi')->get();
-        return view('mahasiswa', compact('data', 'mahasiswa'));
+        // dd($mahasiswa);
+        return view('mahasiswa.index', compact('data', 'mahasiswa'));
     }
 
     /**
@@ -23,7 +26,12 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        // dd('test');
+        $data = ['nama' => 'hasbi saltobelakang', 'foto' => 'avatar.png'];
+        $prodi = Prodi::all();
+        // dd($prodi);
+        return view('mahasiswa.create', compact('data', 'prodi'));
+        // 
     }
 
     /**
@@ -31,7 +39,9 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        Mahasiswa::create($data);
+        return redirect('/mahasiswa');
     }
 
     /**

@@ -32,10 +32,10 @@
                       <th>no</th>
                       <th>nim</th>
                       <th>nama</th>
-                      <th>tanggal_lahir</th>
-                      <th>telp</th>
-                      <th>email</th>
-                      <th>nama_prodi</th>
+                      <th>Tanggal Lahir</th>
+                      <th>Telp</th>
+                      <th>Prodi</th>
+                      <th>Email</th>
                       <th>Aksi</th>
 
                     </tr>
@@ -50,7 +50,7 @@
                         <td>{{ $m->nama }}</td>
                         <td>{{ $m->tanggal_lahir }}</td>
                         <td>{{ $m->telp }}</td>
-                        <td>{{ $m->prodi->nama }}</td>
+                        <td>{{ $m->prodi->nama}}</td>
                         <td>{{ $m->email}}</td>
                         <td>
                             <a href="deletemahasiswa.php?nim={{ $m->nim}}"

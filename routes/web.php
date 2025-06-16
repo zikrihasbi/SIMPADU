@@ -10,4 +10,7 @@ use App\Models\Mahasiswa;
 //});
 
 Route::get('/', [DashboardController::class, 'index']);
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+// Route::get('/', [MahasiswaController::class, 'index']);
+// Route::get('/mahasiswa', [MahasiswaController::class, 'store']);
+// Route::get('/mahasiswa/create', [MahasiswaController::class, 'create']);
+Route::resource('/mahasiswa', MahasiswaController::class);
