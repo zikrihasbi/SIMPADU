@@ -29,15 +29,17 @@
               data-accordion="false"
             >
               <li class="nav-item">
-                <a href="index.php" class="nav-link">
+                <a href="{{ url('mahasiswa') }}" class="nav-link">
                   <i class="nav-icon bi bi-palette"></i>
                   <p>Mahasiswa</p>
                 </a>
-                <li class="nav-item">
-                <a href="prodi.php" class="nav-link">
-                  <i class="nav-icon bi bi-palette"></i>
-                  <p>Program Studi</p>  
+           <li class="nav-item">
+                <a class="nav-link" href="{{ route('prodi.index') }}">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>Program Studi</p>
                 </a>
+            </li>
+
             </ul>
             <!--end::Sidebar Menu-->
           </nav>
